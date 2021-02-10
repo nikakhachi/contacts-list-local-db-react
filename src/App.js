@@ -3,12 +3,14 @@ import ContactForm from './components/Contact-Form';
 import { useState, useEffect } from 'react';
 import services from './services/services';
 import uuid from 'react-uuid';
+import Notification from './components/Notification';
 
 function App(){
 
     const [data, setData] = useState([]);
     const [newName, setNewName] = useState('');
     const [newNum, setNewNum] = useState('');
+    const [notification, setNotification] = useState('');
 
     useEffect(() => {
         services.get()
@@ -40,6 +42,8 @@ function App(){
                     let newArray = [...data];
                     newArray.splice(index, 1, changedObject);
                     setData(newArray);
+                    setNotification(`${newName} was succesfully updated`);
+                    setTimeout(() => {setNotification('')}, 3000);
                     setNewName('');
                     setNewNum('');
                 })
@@ -55,6 +59,8 @@ function App(){
             .then(response => response.json())
             .then(object => {
                 setData(data.concat(object));
+                setNotification(`${newName} was succesfully added to the server`);
+                setTimeout(() => {setNotification('')}, 3000);
                 setNewName('');
                 setNewNum('');
             })
@@ -71,6 +77,8 @@ function App(){
             let newArray = [...data];
             newArray.splice(deletedIndex, 1);
             setData(newArray);
+            setNotification(`${deletedContact.name} was succesfully deleted from the server`);
+            setTimeout(() => {setNotification('')}, 3000);
         })
         .catch(error => console.log(error))
     }
@@ -80,6 +88,7 @@ function App(){
         <div>
             <h1>CONTACT LIST</h1>
             <ContactForm submit={addContact} name={newName} num={newNum} nameHandler={nameHandler} numHandler={numHandler}/>
+            <Notification message={notification}/>
             <ContactList contacts={data} remove={deleteContact}/>
         </div>
     )
