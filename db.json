@@ -1,0 +1,39 @@
+{
+  "contacts": [
+    {
+      "name": "Nick",
+      "number": "111",
+      "id": "258f4df-444b-1ff-a858-c4a1ca2bd226"
+    },
+    {
+      "name": "Tom",
+      "number": "222",
+      "id": "2756752-17e1-0cfb-6f7-da87fa5a1a0"
+    },
+    {
+      "name": "James",
+      "number": "333",
+      "id": "1f668a-5687-b120-0834-175b3a0181e5"
+    },
+    {
+      "name": "Primus",
+      "number": "444",
+      "id": "763204-fb7d-5d1-a0ab-82116bca4a"
+    },
+    {
+      "name": "Kirk",
+      "number": "555",
+      "id": "a2cde3a-370b-7f8e-5b2f-f6e4fb26283d"
+    },
+    {
+      "name": "Lars",
+      "number": "666",
+      "id": "36b2c3-4e3b-d10a-225c-6cb770d3333"
+    },
+    {
+      "name": "Kerry",
+      "number": "666",
+      "id": "7c6c7b6-af80-d1eb-315-f71f6c3817e"
+    }
+  ]
+}
